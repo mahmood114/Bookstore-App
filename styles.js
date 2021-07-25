@@ -77,3 +77,7 @@ export const ButtonStyling = styled.Text`
     background-color: lightblue;
   }
 `;
+
+export const listItemStyled = styled(List.Item)`
+  color: "red";
+`;

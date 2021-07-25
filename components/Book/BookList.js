@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import productStore from "../../stores/productStore";
 import BookItem from "./BookItem";
 import { List, Spinner } from "native-base";
@@ -9,7 +9,7 @@ import { observer } from "mobx-react";
 const BookList = ({ books, navigation }) => {
   if (productStore.loading) return <Spinner />;
 
-  const booksList = books.map((book) => (
+  let booksList = books.map((book) => (
     <BookItem book={book} key={book.id} navigation={navigation} />
   ));
 

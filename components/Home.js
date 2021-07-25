@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Button, ImageBackground } from "react-native";
+import { Text, StyleSheet, Pressable, ImageBackground } from "react-native";
 import {
   OverLayContainer,
   TopStyling,
@@ -16,14 +16,16 @@ const Home = ({ navigation }) => {
       style={{ flex: 1, width: "100%", height: "100%" }}
     >
       <OverLayContainer>
-        <TopStyling>
-          <Title>Mahmood's Bookstore</Title>
-        </TopStyling>
-        <BottomStyling>
-          <ButtonStyling onPress={() => navigation.navigate("VendorList")}>
-            Go see our vendors
-          </ButtonStyling>
-        </BottomStyling>
+        <Pressable onPress={() => navigation.navigate("VendorList")}>
+          <TopStyling>
+            <Title>Mahmood's Bookstore</Title>
+          </TopStyling>
+          <BottomStyling>
+            <ButtonStyling onPress={() => navigation.navigate("VendorList")}>
+              Go see our vendors
+            </ButtonStyling>
+          </BottomStyling>
+        </Pressable>
       </OverLayContainer>
     </ImageBackground>
   );
