@@ -1,17 +1,25 @@
-import { List } from "native-base";
+import { Button, List } from "native-base";
 import React from "react";
-import { Text } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 const CartItem = ({ item }) => {
   return (
     <List.Item>
       <Text>{item.name}</Text>
       <Text>
-        {item.price}KD * {item.quantity}
+        {item.price} KD * {item.quantity}
       </Text>
-      <Text>{item.price * item.quantity}</Text>
+      <Text style={styles.priceStyled}> {item.price * item.quantity} KD</Text>
     </List.Item>
   );
 };
+
+const styles = StyleSheet.create({
+  priceStyled: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginLeft: 80,
+  },
+});
 
 export default CartItem;

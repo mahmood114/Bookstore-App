@@ -7,11 +7,10 @@ export const ListWrapper = styled.View`
 
 export const ItemTitleStyled = styled.Text`
   color: ${(props) => props.theme.mainColor};
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 16px;
-  width: 100%;
 `;
 
 export const DetailWrapper = styled.View`
