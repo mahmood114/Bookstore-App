@@ -28,12 +28,19 @@ class CartStore {
     return total;
   }
 
-  removeItem = () => {
-    AsyncStorage.removeItem("myCart");
+  deleteItem = async (bookId) => {
+    this.items = this.items.filter((item) => bookId !== item.bookId);
+    await AsyncStorage.setItem("myCart", JSON.stringify(this.items));
+  };
+
+  checkout = async () => {
+    this.items = [];
+    await AsyncStorage.removeItem("myCart");
+    alert("Checked out successfully.\nThank you for your purchase!");
   };
 }
 
 const cartStore = new CartStore();
 cartStore.fetchCart();
-// cartStore.removeItem();
+
 export default cartStore;
